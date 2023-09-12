@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mcqs_quiz_app/question.dart';
 
 // QuizBrain quizbrian = QuizBrain();
 
@@ -30,19 +31,21 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> score = [];
 
-  List<String> questions =[
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
+
+
+
+
+
+  List<Question> questionBank = [
+    Question(q:"1) Who developed Python Programming Language?",a:"a) Wick van Rossum",b:"b) Rasmus Lerdorf",c:"c) Guido van Rossum",d:"d) Niene Stom",ra:"C"),
+    Question(q:"2) Which type of Programming does Python support?",a:"a) object-oriented programming",b:"b) structured programming",c:"c) functional programming",d:"d) all of the mentioned",ra:"D"),
+    Question(q:"3. Is Python case sensitive when dealing with identifiers?",a:" a) no",b:" b) yes",c:"c) machine dependent",d:"d) none of the mentioned",ra:"B"),
+    Question(q:"",a:"",b:"",c:"",d:"",ra:"C"),
+
   ];
 
-  List<bool> answers = [
-    false,
-    true,
-    true
-  ];
 
-  int a = 0;
+  int no = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -67,23 +70,97 @@ class _QuizPageState extends State<QuizPage> {
                       color: Colors.amberAccent,
                       blurRadius:5,
                       spreadRadius: 1,
-
-
                     )
                   ]
               ),
-
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                  child: Text(
-                    questions[a],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 35.0,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex:3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 50 ),
+                          child: Text(
+                            questionBank[no].questionText,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 25.0,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 5,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10,right: 10,left: 10,bottom: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 1,bottom: 1),
+                                child: Text(
+                                  questionBank[no].choseA,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 1,bottom: 1),
+                                child: Text(
+                                  questionBank[no].choseB,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 1,bottom: 1),
+                                child: Text(
+                                  questionBank[no].choseC,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 1,bottom: 1),
+                                child: Text(
+                                  questionBank[no].choseD,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                          ))
+                    ],
                   ),
                 ),
               ),
@@ -111,14 +188,14 @@ class _QuizPageState extends State<QuizPage> {
                         ),
                       ),
                       onPressed: () {
-                        bool correct = answers[a];
-                        if (correct == true){
+                        String correct = questionBank[no].questionAnswer;
+                        if (correct == "A"){
                           print("user got it right");
                         }else{
                           print("user got it wrong");
                         }
                         setState(() {
-                          a++;
+                          no++;
                         });
                         //The user picked true.
                       },
@@ -140,14 +217,14 @@ class _QuizPageState extends State<QuizPage> {
                         ),
                       ),
                       onPressed: () {
-                        bool correct = answers[a];
-                        if (correct == false){
+                        String correct = questionBank[no].questionAnswer;
+                        if (correct == "B"){
                           print("user got it right");
                         }else{
                           print("user got it wrong");
                         }
                         setState(() {
-                          a++;
+                          no++;
                         });
                         //The user picked false.
                       },
@@ -178,14 +255,14 @@ class _QuizPageState extends State<QuizPage> {
                         ),
                       ),
                       onPressed: () {
-                        bool correct = answers[a];
-                        if (correct == true){
+                        String correct = questionBank[no].questionAnswer;
+                        if (correct == "C"){
                           print("user got it right");
                         }else{
                           print("user got it wrong");
                         }
                         setState(() {
-                          a++;
+                          no++;
                         });
                         //The user picked true.
                       },
@@ -207,14 +284,14 @@ class _QuizPageState extends State<QuizPage> {
                         ),
                       ),
                       onPressed: () {
-                        bool correct = answers[a];
-                        if (correct == false){
+                        String correct = questionBank[no].questionAnswer;
+                        if (correct == "D"){
                           print("user got it right");
                         }else{
                           print("user got it wrong");
                         }
                         setState(() {
-                          a++;
+                          no++;
                         });
                         //The user picked false.
                       },
@@ -232,66 +309,3 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
-
-
-
-// import 'package:flutter/material.dart';
-// import 'quizbrain.dart';
-//
-// QuizBrain quizbrian = QuizBrain();
-//
-// void main() => runApp(Quizzler());
-//
-// class Quizzler extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-//         backgroundColor: Colors.black87,
-//         body: SafeArea(
-//           child: Padding(
-//             padding: EdgeInsets.symmetric(horizontal: 10.0),
-//             child: QuizPage(),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-// class QuizPage extends StatefulWidget {
-//   @override
-//   _QuizPageState createState() => _QuizPageState();
-// }
-//
-// class _QuizPageState extends State<QuizPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//
-//       children: [
-//         Container(
-//           alignment: Alignment.center,
-//           child: Text(
-//             "This is where the quetion text will go",
-//             style: TextStyle(color: Colors.white),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
-//
-// /*
-// question1: 'You can lead a cow down stairs but not up stairs.', false,
-// question2: 'Approximately one quarter of human bones are in the feet.', true,
-// question3: 'A slug\'s blood is green.', true,
-// */

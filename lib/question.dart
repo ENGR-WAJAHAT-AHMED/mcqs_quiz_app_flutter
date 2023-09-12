@@ -1,10 +1,18 @@
-class QuestionAnswer{
-  String questionText;
-  bool questionAnswer;
+class Question{
+  late String questionText;
+  late String choseA;
+  late String choseB;
+  late String choseC;
+  late String choseD;
+  late String questionAnswer;
 
-  Question({String q,bool a}){
+  Question({required String q,required String a,required String b,required String c,required String d,required String ra}){
 
     questionText = q;
-    questionAnswer = a;
+    choseA = a;
+    choseB = b;
+    choseC = c;
+    choseD = d;
+    questionAnswer = ra;
   }
 }
