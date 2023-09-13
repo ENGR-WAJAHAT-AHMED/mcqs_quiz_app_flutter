@@ -37,9 +37,9 @@ class _QuizPageState extends State<QuizPage> {
 
 
   List<Question> questionBank = [
-    Question(q:"1) Who developed Python Programming Language?",a:"a) Wick van Rossum",b:"b) Rasmus Lerdorf",c:"c) Guido van Rossum",d:"d) Niene Stom",ra:"C"),
-    Question(q:"2) Which type of Programming does Python support?",a:"a) object-oriented programming",b:"b) structured programming",c:"c) functional programming",d:"d) all of the mentioned",ra:"D"),
-    Question(q:"3. Is Python case sensitive when dealing with identifiers?",a:" a) no",b:" b) yes",c:"c) machine dependent",d:"d) none of the mentioned",ra:"B"),
+    Question(q:"1) Who developed Python Programming Language?",a:"A) Wick van Rossum",b:"B) Rasmus Lerdorf",c:"C) Guido van Rossum",d:"D) Niene Stom",ra:"C"),
+    Question(q:"2) Which type of Programming does Python support?",a:"A) object-oriented programming",b:"B) structured programming",c:"C) functional programming",d:"D) all of the mentioned",ra:"D"),
+    Question(q:"3) Is Python case sensitive when dealing with identifiers?",a:"A) no",b:" B) yes",c:"C) machine dependent",d:"D) none of the mentioned",ra:"B"),
     Question(q:"",a:"",b:"",c:"",d:"",ra:"C"),
 
   ];
@@ -76,91 +76,17 @@ class _QuizPageState extends State<QuizPage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        flex:3,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 50 ),
-                          child: Text(
-                            questionBank[no].questionText,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 25.0,
-                              color: Colors.black87,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0 ),
+                    child: Text(
+                      questionBank[no].questionText,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Expanded(
-                        flex: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10,right: 10,left: 10,bottom: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 1,bottom: 1),
-                                child: Text(
-                                  questionBank[no].choseA,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 1,bottom: 1),
-                                child: Text(
-                                  questionBank[no].choseB,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 1,bottom: 1),
-                                child: Text(
-                                  questionBank[no].choseC,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 1,bottom: 1),
-                                child: Text(
-                                  questionBank[no].choseD,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                          ))
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -181,10 +107,10 @@ class _QuizPageState extends State<QuizPage> {
                         primary: Color(0xffFFC900),
                       ),
                       child: Text(
-                        'A',
+                        questionBank[no].choseA,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                         ),
                       ),
                       onPressed: () {
@@ -210,9 +136,9 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Colors.amberAccent
                       ),
                       child: Text(
-                        'B',
+                        questionBank[no].choseB,
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           color: Colors.black,
                         ),
                       ),
@@ -248,10 +174,10 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Colors.amberAccent
                       ),
                       child: Text(
-                        'C',
+                        questionBank[no].choseC,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                         ),
                       ),
                       onPressed: () {
@@ -277,9 +203,9 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Color(0xffFFC900),
                       ),
                       child: Text(
-                        'D',
+                        questionBank[no].choseD,
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           color: Colors.white,
                         ),
                       ),
