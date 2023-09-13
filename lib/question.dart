@@ -5,7 +5,6 @@ class Question{
   late String choseC;
   late String choseD;
   late String questionAnswer;
-
   Question({required String q,required String a,required String b,required String c,required String d,required String ra}){
 
     questionText = q;

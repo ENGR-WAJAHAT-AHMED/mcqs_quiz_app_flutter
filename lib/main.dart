@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mcqs_quiz_app/question.dart';
+import 'quizbrain.dart';
 
-// QuizBrain quizbrian = QuizBrain();
+QuizBrain quizbrian = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -65,7 +65,7 @@ class _QuizPageState extends State<QuizPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0 ),
                     child: Text(
-                      questionBank[no].questionText,
+                      quizbrian.questionBank[no].questionText,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 25.0,
@@ -93,14 +93,14 @@ class _QuizPageState extends State<QuizPage> {
                         primary: Color(0xffFFC900),
                       ),
                       child: Text(
-                        questionBank[no].choseA,
+                        quizbrian.questionBank[no].choseA,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
                         ),
                       ),
                       onPressed: () {
-                        String correct = questionBank[no].questionAnswer;
+                        String correct = quizbrian.questionBank[no].questionAnswer;
                         if (correct == "A"){
                           print("user got it right");
                         }else{
@@ -122,14 +122,14 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Colors.amberAccent
                       ),
                       child: Text(
-                        questionBank[no].choseB,
+                       quizbrian.questionBank[no].choseB,
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
                         ),
                       ),
                       onPressed: () {
-                        String correct = questionBank[no].questionAnswer;
+                        String correct =quizbrian.questionBank[no].questionAnswer;
                         if (correct == "B"){
                           print("user got it right");
                         }else{
@@ -160,14 +160,14 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Colors.amberAccent
                       ),
                       child: Text(
-                        questionBank[no].choseC,
+                        quizbrian.questionBank[no].choseC,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 15.0,
                         ),
                       ),
                       onPressed: () {
-                        String correct = questionBank[no].questionAnswer;
+                        String correct = quizbrian.questionBank[no].questionAnswer;
                         if (correct == "C"){
                           print("user got it right");
                         }else{
@@ -189,14 +189,14 @@ class _QuizPageState extends State<QuizPage> {
                           primary: Color(0xffFFC900),
                       ),
                       child: Text(
-                        questionBank[no].choseD,
+                        quizbrian.questionBank[no].choseD,
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.white,
                         ),
                       ),
                       onPressed: () {
-                        String correct = questionBank[no].questionAnswer;
+                        String correct = quizbrian.questionBank[no].questionAnswer;
                         if (correct == "D"){
                           print("user got it right");
                         }else{
