@@ -1,6 +1,7 @@
 import 'question.dart';
 
 class QuizBrain{
+  int _questionNumber = 0;
   List<Question> _questionBank = [
     Question(
         q:"1) Who developed Python Programming Language?",
@@ -82,24 +83,29 @@ class QuizBrain{
         d: "d) /*",
         ra: "B"
     ),
-    Question(q:"",a:"",b:"",c:"",d:"",ra:"C"),
+    Question(q:"*********END********",a:"",b:"",c:"",d:"",ra:"C"),
   ];
-  String getQuestionText(int questionNubmer){
-    return _questionBank[questionNubmer].questionText;
+  void nextQuestion(){
+    if (_questionNumber < _questionBank.length-1){
+      _questionNumber++;
+    }
   }
-  String getQuestionAnswer(int questionNubmer){
-    return _questionBank[questionNubmer].questionAnswer;
+  String getQuestionText(){
+    return _questionBank[_questionNumber].questionText;
   }
-  String getChoseA(int questionNubmer){
-    return _questionBank[questionNubmer].choseA;
+  String getQuestionAnswer(){
+    return _questionBank[_questionNumber].questionAnswer;
   }
-  String getChoseB(int questionNubmer){
-    return _questionBank[questionNubmer].choseB;
+  String getChoseA(){
+    return _questionBank[_questionNumber].choseA;
   }
-  String getChoseC(int questionNubmer){
-    return _questionBank[questionNubmer].choseC;
+  String getChoseB(){
+    return _questionBank[_questionNumber].choseB;
   }
-  String getChoseD(int questionNubmer){
-    return _questionBank[questionNubmer].choseD;
+  String getChoseC(){
+    return _questionBank[_questionNumber].choseC;
+  }
+  String getChoseD(){
+    return _questionBank[_questionNumber].choseD;
   }
 }
